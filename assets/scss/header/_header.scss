@@ -1,0 +1,153 @@
+header{
+    @extend %font-config;
+    height: 70px;
+    background-color: $header-bgc;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+       
+        &__logo{
+            color: $headerfontcolor;
+            font-size: 25px;
+          
+            transition: .2s;
+            position: relative;
+            &::after{
+                content: " ";
+                position: absolute;
+                width: 10px;
+                height: 10px;
+               background-color: $primary-red ;
+               border-radius: 50%;
+          right: 20px;
+
+               bottom: 5px;
+            }
+
+        }
+        &-right {
+display: flex;
+align-items: center;
+justify-content: space-between;
+&__link{
+display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 50px;
+    
+.drop-down{
+    position: relative;
+
+ ul{
+    position: absolute;
+    background-color: $header-bgc;
+    width: 170px;
+    top: 60px;
+    padding: 10px 20px;
+    list-style: none;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: .4s;
+    visibility: hidden;
+    opacity: 0;
+ li {
+    padding: 5px 0px;
+   
+ 
+    a{
+    padding: 0 ;
+    color: $headerfontcolor;
+}
+
+ }
+ }
+
+&:hover {
+    ul{
+    top: 30px;
+    visibility: visible;
+    opacity: 1;
+}
+}
+
+
+}
+    &-item{
+
+        a{
+            color: $headerlinkcolor;
+          font-weight: 500;
+          position: relative;
+        }
+        &:hover{
+           
+                a::after{
+                content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.1em;
+            background-color: rgb(195, 104, 104);
+            opacity: 1;
+            transform: translate3d(0, 0.2em, 0);
+            transition: opacity 300ms, transform 300ms;
+            
+            }
+        }
+      
+         
+        
+        .active{
+
+color: $headerfontcolor;
+        }
+       
+    }
+}
+        };
+&-right__btn{
+@include button($primary-red);
+font-size:13px;
+font-weight: 500;
+&:hover{
+    background-color:  rgb(249, 89, 89) ;
+}
+}}
+.bars{
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    margin-left: 15px;
+    display: none;
+  }
+    }
+    
+
+    $breakpoint-tablet: 992px;
+@media (max-width: $breakpoint-tablet) {
+.nav{
+    
+
+    
+    .nav-right{
+&__link{
+   
+    visibility: hidden;
+
+}
+ .bars{
+    display: flex;
+ }
+
+  }
+}
+}

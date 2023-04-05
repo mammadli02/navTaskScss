@@ -1,0 +1,10 @@
+@mixin button($bgc){
+    color: white;
+border-radius: 20px;
+    background-color: $bgc;
+    padding: 3px 3px;
+text-align: center;
+
+    border: none;
+
+}
